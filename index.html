@@ -3,75 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USTAZ DIGITAL ACADEMY</title>
+    <title>USTAZ DIGITAL ACADEMY - Islamic Online Education</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
+            --primary-color: #2b6777;
+            --secondary-color: #52ab98;
+            --accent-color: #c8d8e4;
+            --light-color: #f2f2f2;
+            --dark-color: #1a3e4c;
+            --gold-color: #d4af37;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             scroll-behavior: smooth;
         }
         
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            font-size: 1.2em;
+        }
+        
         .navbar {
-            background-color: var(--secondary-color);
+            background-color: var(--primary-color);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         
         .navbar-brand {
             font-weight: 700;
             color: white !important;
+            font-size: 1.5rem;
+        }
+        
+        .navbar-brand span {
+            color: var(--gold-color);
         }
         
         .nav-link {
-            color: rgba(255, 255, 255, 0.8) !important;
-            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-weight: 600;
             margin: 0 10px;
             transition: color 0.3s;
         }
         
         .nav-link:hover {
-            color: white !important;
+            color: var(--gold-color) !important;
         }
         
         .hero-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color);
-            background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(43, 103, 119, 0.8), rgba(26, 62, 76, 0.9)), 
+                        url('https://images.unsplash.com/photo-1563784462041-5f97ac9523dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
             color: white;
-            padding: 120px 0;
+            padding: 150px 0 100px;
             position: relative;
+            text-align: center;
         }
         
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
         
-        .hero-content {
-            position: relative;
-            z-index: 1;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
         }
         
         .section-title {
             position: relative;
             margin-bottom: 50px;
-            color: var(--secondary-color);
+            color: var(--dark-color);
             font-weight: 700;
+            text-align: center;
         }
         
         .section-title::after {
@@ -82,7 +93,14 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
+        }
+        
+        .section-title-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-top: 10px;
         }
         
         .service-card {
@@ -93,6 +111,7 @@
             margin-bottom: 30px;
             padding: 30px 20px;
             text-align: center;
+            height: 100%;
         }
         
         .service-card:hover {
@@ -106,79 +125,83 @@
             margin-bottom: 20px;
         }
         
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .portfolio-img {
-            transition: transform 0.5s;
-        }
-        
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(52, 152, 219, 0.9);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.5s;
-            color: white;
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        
-        .portfolio-item:hover .portfolio-img {
-            transform: scale(1.1);
-        }
-        
-        .team-card {
+        .course-card {
             border: none;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             overflow: hidden;
-            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
+            margin-bottom: 30px;
         }
         
-        .team-card:hover {
+        .course-card:hover {
             transform: translateY(-10px);
         }
         
-        .team-img {
-            height: 250px;
+        .course-img {
+            height: 200px;
             object-fit: cover;
+            width: 100%;
         }
         
-        .social-icons {
-            margin-top: 15px;
-        }
-        
-        .social-icons a {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 35px;
-            height: 35px;
-            background-color: var(--primary-color);
+        .course-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--gold-color);
             color: white;
-            border-radius: 50%;
-            margin: 0 5px;
-            transition: background-color 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 600;
         }
         
-        .social-icons a:hover {
-            background-color: var(--secondary-color);
+        .instructor-card {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .instructor-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            color: var(--accent-color);
+            opacity: 0.3;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
         }
         
         .contact-info {
@@ -191,40 +214,63 @@
             margin-right: 15px;
         }
         
-        .form-control {
-            border-radius: 5px;
-            padding: 12px 15px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-        }
-        
-        .form-control:focus {
-            box-shadow: none;
-            border-color: var(--primary-color);
-        }
-        
         .btn-primary {
             background-color: var(--primary-color);
             border: none;
             padding: 12px 30px;
             border-radius: 5px;
             font-weight: 600;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
         }
         
         .btn-primary:hover {
-            background-color: var(--secondary-color);
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline-primary {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
         }
         
         footer {
-            background-color: var(--secondary-color);
+            background-color: var(--dark-color);
             color: white;
             padding: 50px 0 20px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .footer-logo span {
+            color: var(--gold-color);
         }
         
         .footer-links h5 {
             margin-bottom: 20px;
             font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
         }
         
         .footer-links ul {
@@ -243,14 +289,65 @@
         }
         
         .footer-links a:hover {
+            color: var(--gold-color);
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
             color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--gold-color);
+            transform: translateY(-3px);
         }
         
         .copyright {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 20px;
             margin-top: 30px;
+            text-align: center;
             color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Prayer Times Widget */
+        .prayer-times {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .prayer-times h5 {
+            color: var(--primary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .prayer-time {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .prayer-name {
+            font-weight: 600;
+        }
+        
+        .current-prayer {
+            color: var(--gold-color);
+            font-weight: 700;
         }
     </style>
 </head>
@@ -258,7 +355,9 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">BusinessPro</a>
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-graduation-cap me-2"></i>USTAZ<span>DIGITAL</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -268,174 +367,204 @@
                         <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" href="#courses">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                        <a class="nav-link" href="#instructors">Instructors</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#team">Team</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
+                <a href="#enroll" class="btn btn-outline-light ms-lg-3">Enroll Now</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero-section" id="home">
-        <div class="container hero-content">
-            <div class="row align-items-center">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-4 fw-bold mb-4">We Build Your Business Vision</h1>
-                    <p class="lead mb-5">Professional solutions for your business growth. We help startups and established companies achieve their goals through innovative strategies.</p>
-                    <a href="#contact" class="btn btn-primary btn-lg px-4 me-2">Get Started</a>
-                    <a href="#services" class="btn btn-outline-light btn-lg px-4">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-5 bg-light" id="services">
-        <div class="container py-5">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-6 text-center">
-                    <h2 class="section-title">Our Services</h2>
-                    <p class="text-muted">We offer a wide range of professional services to help your business grow and succeed in today's competitive market.</p>
-                </div>
-            </div>
+        <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card bg-white">
-                        <div class="service-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Business Strategy</h3>
-                        <p class="text-muted">We develop customized business strategies to help you achieve your goals and outperform competitors.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card bg-white">
-                        <div class="service-icon">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
-                        <h3>Marketing Solutions</h3>
-                        <p class="text-muted">Comprehensive marketing plans to increase brand awareness and drive customer engagement.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card bg-white">
-                        <div class="service-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3>Web Development</h3>
-                        <p class="text-muted">Custom websites and web applications designed to convert visitors into customers.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card bg-white">
-                        <div class="service-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Mobile Apps</h3>
-                        <p class="text-muted">Engaging mobile applications for iOS and Android platforms to reach your audience anywhere.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card bg-white">
-                        <div class="service-icon">
-                            <i class="fas fa-search-dollar"></i>
-                        </div>
-                        <h3>SEO Optimization</h3>
-                        <p class="text-muted">Improve your search engine rankings and drive organic traffic to your website.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card bg-white">
-                        <div class="service-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3>Cloud Solutions</h3>
-                        <p class="text-muted">Secure and scalable cloud infrastructure to support your business operations.</p>
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="hero-title">USTAZ DIGITAL ACADEMY</h1>
+                    <p class="hero-subtitle">Advancing Islamic Knowledge Through Digital Education</p>
+                    <p class="arabic-text mb-4">﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾</p>
+                    <p>"And say: My Lord, increase me in knowledge" (Quran 20:114)</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#courses" class="btn btn-primary btn-lg px-4">Explore Courses</a>
+                        <a href="#enroll" class="btn btn-outline-light btn-lg px-4">Free Trial</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="py-5" id="portfolio">
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="d-flex">
+                        <div class="me-4 text-primary">
+                            <i class="fas fa-mosque fa-3x"></i>
+                        </div>
+                        <div>
+                            <h4>Authentic Knowledge</h4>
+                            <p class="text-muted">Learn from qualified scholars and certified instructors with traditional Islamic education.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="d-flex">
+                        <div class="me-4 text-primary">
+                            <i class="fas fa-laptop-code fa-3x"></i>
+                        </div>
+                        <div>
+                            <h4>Modern Platform</h4>
+                            <p class="text-muted">Interactive learning with live classes, recorded sessions, and mobile access.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="d-flex">
+                        <div class="me-4 text-primary">
+                            <i class="fas fa-globe-asia fa-3x"></i>
+                        </div>
+                        <div>
+                            <h4>Global Community</h4>
+                            <p class="text-muted">Join students from around the world in a supportive learning environment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="py-5" id="courses">
         <div class="container py-5">
             <div class="row justify-content-center mb-5">
-                <div class="col-lg-6 text-center">
-                    <h2 class="section-title">Our Portfolio</h2>
-                    <p class="text-muted">Explore our recent projects and see how we've helped businesses like yours succeed.</p>
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title">Our Courses</h2>
+                    <p class="section-title-arabic">دوراتنا التعليمية</p>
+                    <p class="text-muted">Comprehensive Islamic education for all levels, from beginners to advanced students.</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 1" class="img-fluid portfolio-img">
-                        <div class="portfolio-overlay">
-                            <h3>E-commerce Platform</h3>
-                            <p>Online store with integrated payment system</p>
-                            <a href="#" class="btn btn-outline-light mt-3">View Details</a>
+                    <div class="course-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1542816417-0983670d25b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Quran Studies" class="course-img">
+                            <span class="course-badge">Beginner</span>
+                        </div>
+                        <div class="p-4">
+                            <h4>Quranic Studies</h4>
+                            <p class="text-muted">Learn proper Tajweed, memorization techniques, and Quranic interpretation.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-primary fw-bold">$49/month</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Project 2" class="img-fluid portfolio-img">
-                        <div class="portfolio-overlay">
-                            <h3>Corporate Website</h3>
-                            <p>Modern design with CMS integration</p>
-                            <a href="#" class="btn btn-outline-light mt-3">View Details</a>
+                    <div class="course-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1563784462041-5f97ac9523dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Hadith Studies" class="course-img">
+                            <span class="course-badge">Intermediate</span>
+                        </div>
+                        <div class="p-4">
+                            <h4>Hadith Sciences</h4>
+                            <p class="text-muted">Study of prophetic traditions, authentication methods, and application.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-primary fw-bold">$59/month</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80" alt="Project 3" class="img-fluid portfolio-img">
-                        <div class="portfolio-overlay">
-                            <h3>Mobile Application</h3>
-                            <p>iOS and Android fitness tracking app</p>
-                            <a href="#" class="btn btn-outline-light mt-3">View Details</a>
+                    <div class="course-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fiqh" class="course-img">
+                            <span class="course-badge">Advanced</span>
+                        </div>
+                        <div class="p-4">
+                            <h4>Islamic Jurisprudence</h4>
+                            <p class="text-muted">Deep dive into Fiqh with comparative study of different schools of thought.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-primary fw-bold">$69/month</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 4" class="img-fluid portfolio-img">
-                        <div class="portfolio-overlay">
-                            <h3>Brand Identity</h3>
-                            <p>Complete branding package for startup</p>
-                            <a href="#" class="btn btn-outline-light mt-3">View Details</a>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">View All Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors Section -->
+    <section class="py-5 bg-light" id="instructors">
+        <div class="container py-5">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title">Our Instructors</h2>
+                    <p class="section-title-arabic">مشايخنا ومعلمونا</p>
+                    <p class="text-muted">Learn from qualified scholars with traditional Islamic education and modern teaching methods.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="instructor-card">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Shaykh Ahmad" class="instructor-img">
+                        <h4>Shaykh Ahmad Al-Misri</h4>
+                        <p class="text-muted">Quran & Tajweed</p>
+                        <p class="small">Graduate of Al-Azhar University, Egypt</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 5" class="img-fluid portfolio-img">
-                        <div class="portfolio-overlay">
-                            <h3>Digital Marketing</h3>
-                            <p>Social media campaign for retail brand</p>
-                            <a href="#" class="btn btn-outline-light mt-3">View Details</a>
+                <div class="col-lg-3 col-md-6">
+                    <div class="instructor-card">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Ustadha Fatima" class="instructor-img">
+                        <h4>Ustadha Fatima Khan</h4>
+                        <p class="text-muted">Hadith Studies</p>
+                        <p class="small">Graduate of Islamic University of Medina</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 6" class="img-fluid portfolio-img">
-                        <div class="portfolio-overlay">
-                            <h3>Business Consulting</h3>
-                            <p>Operational efficiency improvement</p>
-                            <a href="#" class="btn btn-outline-light mt-3">View Details</a>
+                <div class="col-lg-3 col-md-6">
+                    <div class="instructor-card">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Dr. Yusuf" class="instructor-img">
+                        <h4>Dr. Yusuf Abdullah</h4>
+                        <p class="text-muted">Fiqh & Usul al-Fiqh</p>
+                        <p class="small">PhD in Islamic Law, International Islamic University</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="instructor-card">
+                        <img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Ustadha Aisha" class="instructor-img">
+                        <h4>Ustadha Aisha Rahman</h4>
+                        <p class="text-muted">Seerah & Islamic History</p>
+                        <p class="small">MA in Islamic Studies, SOAS University</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                 </div>
@@ -444,100 +573,171 @@
     </section>
 
     <!-- About Section -->
-    <section class="py-5 bg-light" id="about">
+    <section class="py-5" id="about">
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h2 class="section-title mb-4">About Our Company</h2>
-                    <p class="lead">Founded in 2010, BusinessPro has been helping companies of all sizes achieve their business goals through innovative solutions and strategic thinking.</p>
-                    <p>We believe in building long-term relationships with our clients by delivering exceptional value and outstanding results. Our team of experts brings diverse experience from various industries, allowing us to provide unique insights and customized solutions.</p>
-                    <p>With offices in three countries and clients worldwide, we've established ourselves as a trusted partner for businesses looking to grow and innovate.</p>
-                    <a href="#" class="btn btn-primary mt-3">Learn More About Us</a>
+                    <h2 class="section-title text-start">About Ustaz Digital Academy</h2>
+                    <p class="section-title-arabic text-start">عن أكاديمية الأستاذ الرقمية</p>
+                    <p class="lead">Bridging traditional Islamic knowledge with modern technology.</p>
+                    <p>Founded in 2015, Ustaz Digital Academy has been at the forefront of Islamic online education, serving thousands of students worldwide. Our mission is to make authentic Islamic knowledge accessible to everyone, anywhere.</p>
+                    <p>We combine traditional teaching methodologies with cutting-edge digital platforms to create an engaging learning experience. Our curriculum is carefully designed by qualified scholars to ensure accuracy and relevance to contemporary issues.</p>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary bg-opacity-10 p-2 rounded me-3">
+                                    <i class="fas fa-users text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">10,000+</h5>
+                                    <small class="text-muted">Students</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary bg-opacity-10 p-2 rounded me-3">
+                                    <i class="fas fa-globe text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">50+</h5>
+                                    <small class="text-muted">Countries</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary bg-opacity-10 p-2 rounded me-3">
+                                    <i class="fas fa-book text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">30+</h5>
+                                    <small class="text-muted">Courses</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary bg-opacity-10 p-2 rounded me-3">
+                                    <i class="fas fa-chalkboard-teacher text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">15+</h5>
+                                    <small class="text-muted">Instructors</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our Team" class="img-fluid rounded shadow">
+                    <div class="prayer-times">
+                        <h5><i class="fas fa-pray me-2"></i> Prayer Times</h5>
+                        <div class="prayer-time">
+                            <span class="prayer-name">Fajr</span>
+                            <span class="prayer-time">5:30 AM</span>
+                        </div>
+                        <div class="prayer-time">
+                            <span class="prayer-name">Sunrise</span>
+                            <span class="prayer-time">6:45 AM</span>
+                        </div>
+                        <div class="prayer-time">
+                            <span class="prayer-name">Dhuhr</span>
+                            <span class="prayer-time current-prayer">1:15 PM</span>
+                        </div>
+                        <div class="prayer-time">
+                            <span class="prayer-name">Asr</span>
+                            <span class="prayer-time">4:30 PM</span>
+                        </div>
+                        <div class="prayer-time">
+                            <span class="prayer-name">Maghrib</span>
+                            <span class="prayer-time">7:20 PM</span>
+                        </div>
+                        <div class="prayer-time">
+                            <span class="prayer-name">Isha</span>
+                            <span class="prayer-time">8:45 PM</span>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="About Us" class="img-fluid rounded shadow">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="py-5" id="team">
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
         <div class="container py-5">
             <div class="row justify-content-center mb-5">
-                <div class="col-lg-6 text-center">
-                    <h2 class="section-title">Our Team</h2>
-                    <p class="text-muted">Meet the talented professionals who make our success possible.</p>
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title">Student Testimonials</h2>
+                    <p class="section-title-arabic">آراء طلابنا</p>
+                    <p class="text-muted">What our students say about their learning experience with us.</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="team-card">
-                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Team Member" class="img-fluid team-img">
-                        <div class="p-4">
-                            <h4>Sarah Johnson</h4>
-                            <p class="text-muted">CEO & Founder</p>
-                            <div class="social-icons">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <p>"The Quranic studies course transformed my recitation. The instructors are patient and knowledgeable, and the online platform makes it easy to learn from home."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Mohammed">
+                            <div>
+                                <h6 class="mb-0">Mohammed Ali</h6>
+                                <small class="text-muted">Quran Student, UK</small>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="team-card">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Team Member" class="img-fluid team-img">
-                        <div class="p-4">
-                            <h4>Michael Chen</h4>
-                            <p class="text-muted">CTO</p>
-                            <div class="social-icons">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-github"></i></a>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <p>"As a working professional, I appreciate the flexible schedule. The Fiqh course has helped me understand practical rulings in my daily life."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Amina">
+                            <div>
+                                <h6 class="mb-0">Amina Yusuf</h6>
+                                <small class="text-muted">Fiqh Student, USA</small>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="team-card">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member" class="img-fluid team-img">
-                        <div class="p-4">
-                            <h4>Emily Rodriguez</h4>
-                            <p class="text-muted">Marketing Director</p>
-                            <div class="social-icons">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <p>"The Hadith sciences program is excellent. The teachers connect classical knowledge with contemporary applications in a way that's easy to understand."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Ibrahim">
+                            <div>
+                                <h6 class="mb-0">Ibrahim Malik</h6>
+                                <small class="text-muted">Hadith Student, Canada</small>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="team-card">
-                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Team Member" class="img-fluid team-img">
-                        <div class="p-4">
-                            <h4>David Wilson</h4>
-                            <p class="text-muted">Lead Developer</p>
-                            <div class="social-icons">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment Section -->
+    <section class="py-5 bg-primary text-white" id="enroll">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="mb-3">Ready to Start Your Islamic Learning Journey?</h2>
+                    <p class="mb-0">Join thousands of students worldwide in learning authentic Islamic knowledge from qualified scholars.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#" class="btn btn-light btn-lg me-2">Enroll Now</a>
+                    <a href="#" class="btn btn-outline-light btn-lg">Free Trial</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="py-5 bg-light" id="contact">
+    <section class="py-5" id="contact">
         <div class="container py-5">
             <div class="row justify-content-center mb-5">
-                <div class="col-lg-6 text-center">
+                <div class="col-lg-8 text-center">
                     <h2 class="section-title">Contact Us</h2>
-                    <p class="text-muted">Have questions or ready to start your project? Get in touch with our team.</p>
+                    <p class="section-title-arabic">اتصل بنا</p>
+                    <p class="text-muted">Have questions or need assistance? Our team is here to help you.</p>
                 </div>
             </div>
             <div class="row">
@@ -549,7 +749,7 @@
                             </div>
                             <div>
                                 <h5>Location</h5>
-                                <p class="text-muted">House No 56 Ayura Street<br>Abaji-Abuja, Nigeria</p>
+                                <p class="text-muted">123 Knowledge Street<br>Islamic Education District<br>Cairo, Egypt</p>
                             </div>
                         </div>
                         <div class="d-flex mb-4">
@@ -558,7 +758,7 @@
                             </div>
                             <div>
                                 <h5>Phone</h5>
-                                <p class="text-muted">08168985912</p>
+                                <p class="text-muted">+20 123 456 7890</p>
                             </div>
                         </div>
                         <div class="d-flex mb-4">
@@ -567,7 +767,7 @@
                             </div>
                             <div>
                                 <h5>Email</h5>
-                                <p class="text-muted">ustazdigitalacademy@gmail.com</p>
+                                <p class="text-muted">info@ustazdigital.com</p>
                             </div>
                         </div>
                         <div class="d-flex">
@@ -575,8 +775,8 @@
                                 <i class="fas fa-clock"></i>
                             </div>
                             <div>
-                                <h5>Working Hours</h5>
-                                <p class="text-muted">Monday - Friday: 9am - 6pm<br>Saturday: 10am - 2pm</p>
+                                <h5>Support Hours</h5>
+                                <p class="text-muted">Sunday - Thursday: 9am - 5pm (GMT+2)<br>Friday: Closed</p>
                             </div>
                         </div>
                     </div>
@@ -592,6 +792,13 @@
                             </div>
                         </div>
                         <input type="text" class="form-control" placeholder="Subject">
+                        <select class="form-control">
+                            <option value="">Select Department</option>
+                            <option value="admissions">Admissions</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="academic">Academic Questions</option>
+                            <option value="other">Other</option>
+                        </select>
                         <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
@@ -605,38 +812,41 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h5 class="text-white mb-4">BusinessPro</h5>
-                    <p class="text-muted">We help businesses of all sizes achieve their goals through innovative solutions and strategic thinking.</p>
+                    <a href="#" class="footer-logo">
+                        <i class="fas fa-graduation-cap me-2"></i>USTAZ<span>DIGITAL</span>
+                    </a>
+                    <p class="text-muted">Advancing Islamic knowledge through innovative digital education since 2015.</p>
                     <div class="social-icons mt-4">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
-                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <h5 class="text-white">Quick Links</h5>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#instructors">Instructors</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
-                    <h5 class="text-white mb-4">Services</h5>
+                    <h5 class="text-white">Courses</h5>
                     <ul>
-                        <li><a href="#">Business Strategy</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Mobile Apps</a></li>
-                        <li><a href="#">SEO</a></li>
+                        <li><a href="#">Quran Studies</a></li>
+                        <li><a href="#">Hadith Sciences</a></li>
+                        <li><a href="#">Islamic Law</a></li>
+                        <li><a href="#">Arabic Language</a></li>
+                        <li><a href="#">Islamic Finance</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
-                    <h5 class="text-white mb-4">Newsletter</h5>
-                    <p class="text-muted">Subscribe to our newsletter for the latest updates and business insights.</p>
+                    <h5 class="text-white">Newsletter</h5>
+                    <p class="text-muted">Subscribe to receive updates on new courses and Islamic content.</p>
                     <form class="mt-4">
                         <div class="input-group">
                             <input type="email" class="form-control" placeholder="Your Email" required>
