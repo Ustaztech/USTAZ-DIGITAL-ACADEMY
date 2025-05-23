@@ -847,12 +847,12 @@
                 <div class="col-lg-4">
                     <h5 class="text-white">Newsletter</h5>
                     <p class="text-muted">Subscribe to receive updates on new courses and Islamic content.</p>
-                    <form class="mt-4">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                            <button class="btn btn-primary" type="submit">Subscribe</button>
-                        </div>
-                    </form>
+                    <form name="contact" method="POST" data-netlify="true">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+</form>
                 </div>
             </div>
             <div class="row">
